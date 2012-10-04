@@ -97,7 +97,7 @@
 	});
 
 	// enable the autocompleter
-	new Ajax.Autocompleter("location_id", "autocomplete_location", "<?= base_url();?>index.php/main/search_location/", {
+	new Ajax.Autocompleter("location_id", "autocomplete_location", "<?php echo base_url();?>index.php/main/search_location/", {
 		minChars : 2,
 		afterUpdateElement : updateLocationId
 	});

@@ -211,8 +211,9 @@ class hack_model extends CI_Model {
 						'INNER JOIN fe_county as fc ON fl.county_id = fc.id ' .
 						'WHERE fl.id = ' . $loc->loc_id
 					);
-					
-			$loc_det = $query2->result()[0];
+
+			$tmp_arr = $query2->result();
+			$loc_det = $tmp_arr[0];
 					
 			$output .= '{';
 			$output .= 		'"name" : "' . $loc_det->loc_name . '", ';
@@ -300,7 +301,8 @@ class hack_model extends CI_Model {
 						'WHERE fl.id = ' . $loc->loc_id
 					);
 					
-			$loc_det = $query2->result()[0];
+			$tmp_arr = $query2->result();
+			$loc_det = $tmp_arr[0];
 					
 			$output .= '{';
 			$output .= 		'"name" : "' . $loc_det->loc_name . '", ';
@@ -371,7 +373,8 @@ class hack_model extends CI_Model {
 						' WHERE fc.id = ' . $case_id
 				);
 							
-		$case = $query->result()[0];
+		$tmp_arr = $query->result();
+		$case = $tmp_arr[0];
 		
 		$data['title'] = $case->title;
 		$data['content'] = $case->content;
@@ -392,8 +395,9 @@ class hack_model extends CI_Model {
 						' INNER JOIN fe_location as fl   ON fc.loc_id = fl.id ' .
 						' WHERE fc.id = ' . $alert_id
 				);
-							
-		$case = $query->result()[0];
+						
+		$tmp_arr = $query->result();
+		$case = $tmp_arr[0];
 		
 		$data['title'] = $case->title;
 		$data['content'] = $case->content;
