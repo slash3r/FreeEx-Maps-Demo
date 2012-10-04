@@ -1,0 +1,7 @@
+Make sure you have PHP and MySQL working properly.
+Copy the src/ci/ folder to the web root of your server.
+The database configuration is done through the ci/application/config/database.php file.
+
+Create a database named freeex. Load the script from src/freeex.sql
+
+The URL of the installed application is: <webroot>/ci/index.php/main
